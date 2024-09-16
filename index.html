@@ -1,1 +1,202 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f2; /* Fond blanc cassé */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Rectangle centré */
+        .rectangle {
+            width: 350px;
+            height: 200px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .rectangle p {
+            color: #333;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        /* Animation de fondu */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Bonhomme 1 */
+        .stickman1 {
+            position: absolute;
+            left: 50px;
+            bottom: 100px;
+            animation: fight1 3s ease-in-out infinite;
+        }
+
+        /* Bonhomme 2 */
+        .stickman2 {
+            position: absolute;
+            right: 50px;
+            bottom: 100px;
+            animation: fight2 3s ease-in-out infinite;
+        }
+
+        /* Tête et corps des bonhommes */
+        .head {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .body {
+            width: 4px;
+            height: 60px;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .arm {
+            width: 60px;
+            height: 4px;
+            background-color: black;
+            position: absolute;
+            top: 20px;
+        }
+
+        .arm.left {
+            left: -60px;
+            transform-origin: right;
+        }
+
+        .arm.right {
+            right: -60px;
+            transform-origin: left;
+        }
+
+        .leg {
+            width: 60px;
+            height: 4px;
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .leg.left {
+            left: -30px;
+            transform: rotate(-45deg);
+        }
+
+        .leg.right {
+            right: -30px;
+            transform: rotate(45deg);
+        }
+
+        /* Animation de combat du bonhomme 1 */
+        @keyframes fight1 {
+            0% {
+                left: 50px;
+                transform: rotate(0deg);
+            }
+            25% {
+                left: 200px; /* Le bonhomme avance vers le centre */
+                transform: rotate(-10deg); /* Coup de poing */
+            }
+            50% {
+                left: 250px;
+                transform: rotate(10deg); /* Retrait du coup */
+            }
+            75% {
+                left: 200px; /* Encore un coup */
+                transform: rotate(-10deg);
+            }
+            100% {
+                left: 50px; /* Retour à la position initiale */
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Animation de combat du bonhomme 2 */
+        @keyframes fight2 {
+            0% {
+                right: 50px;
+                transform: rotate(0deg);
+            }
+            25% {
+                right: 200px; /* Le bonhomme avance vers le centre */
+                transform: rotate(10deg); /* Coup de poing */
+            }
+            50% {
+                right: 250px;
+                transform: rotate(-10deg); /* Retrait du coup */
+            }
+            75% {
+                right: 200px; /* Encore un coup */
+                transform: rotate(10deg);
+            }
+            100% {
+                right: 50px; /* Retour à la position initiale */
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bonhomme 1 -->
+    <div class="stickman1">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+    </div>
+
+    <!-- Bonhomme 2 -->
+    <div class="stickman2">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+    </div>
+
+    <!-- Rectangle avec le texte -->
+    <div class="rectangle">
+        <div>
+            <p>Ecole ENSITECH</p>
+            
+        </div>
+    </div>
+
+</body>
+</html>
